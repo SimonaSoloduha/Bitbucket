@@ -1,0 +1,42 @@
+{% extends 'main.html'%}
+
+<body>
+
+{% block content %}
+
+<h2>Добавить сотрудника</h2>
+<form method="POST" enctype="multipart/form-data" class="col-md-4">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="id_name">ФИО:</label>
+        <input type="text" name="name" maxlength="150" class="form-control" required="" id="id_name"
+               placeholder="Введите имя">
+    </div>
+    <div class="form-group">
+        <label for="id_job_title">Должность:</label>
+        <input type="text" name="job_title" maxlength="150" class="form-control" required="" id="id_job_title"
+               placeholder="Введите должность">
+    </div>
+    <div class="form-group">
+        <label for="id_date_start">Дата приема на работу:</label>
+        <input type="text" name="date_start" maxlength="150" class="form-control" required="" id="id_date_start"
+               placeholder="В формате 2000-12-31">
+    </div>
+    <div class="form-group">
+        <label for="id_salary">Размер заработной платы:</label>
+        <input type="text" name="salary" min="0" class="form-control" required="" id="id_salary"
+               placeholder="Введите размер зп">
+    </div>
+    <div class="form-group">
+        <label>Подразделение:</label>
+        <div>{{ form.part }}</div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-default">Сохранить</button>
+    </div>
+</form>
+
+
+{% endblock %}}
+
+</body>

@@ -1,0 +1,13 @@
+{% extends 'main.html'%}
+
+<body>
+
+{% block content %}
+<h4>{{ part.name }}</h4>
+<p>{{ part.parent }}</p>
+
+<a href="/part/{{part.id}}/edit/">Редактировать данные</a>
+
+{% endblock %}}
+
+</body>

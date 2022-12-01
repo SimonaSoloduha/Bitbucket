@@ -1,0 +1,16 @@
+{% extends 'main.html'%}
+
+<body>
+
+{% block content %}
+<h4>{{ worker.name }}</h4>
+<p>{{ worker.job_title }}</p>
+<p>{{ worker.date_start|date:"Y-m-d" }}</p>
+<p>{{ worker.salary }}</p>
+<p>{{ worker.part }}</p>
+
+<a href="/{{worker.id}}/edit/">Редактировать данные</a>
+
+{% endblock %}}
+
+</body>

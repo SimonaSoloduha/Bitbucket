@@ -1,0 +1,22 @@
+{% extends 'main.html'%}
+
+<body>
+
+{% block content %}
+
+<h2>Редактировать данные о сотруднике:</h2>
+
+<form method="post" action="/{{worker_id}}/edit/">
+    {% csrf_token %}
+    <p>ФИО: {{ form.name }}</p>
+    <p>Должность: {{ form.job_title }}</p>
+    <p>Дата приема на работу: {{ form.date_start }}</p>
+    <p>Размер заработной платы: {{ form.salary }}</p>
+    <p>Подразделение: {{ form.part }}</p>
+
+    <button type="submit">Сохранить</button>
+</form>
+
+{% endblock %}
+
+</body>

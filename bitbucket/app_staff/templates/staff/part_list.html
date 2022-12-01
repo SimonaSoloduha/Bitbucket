@@ -1,0 +1,28 @@
+{% extends 'main.html'%}
+
+<body>
+
+{% block content %}
+<h3>Все отделы</h3>
+
+{% if part_list %}
+
+<ul>
+
+    {% for part in part_list %}
+
+    <li>
+        <a href="{{ part.id }}">{{ part.name }}</a>
+    </li>
+    <hr>
+
+    {% endfor %}
+
+</ul>
+{% else %}
+<p>Пока ничего нет</p>
+{% endif %}
+
+{% endblock %}}
+
+</body>

@@ -1,0 +1,30 @@
+{% extends 'main.html'%}
+
+<body>
+
+{% block content %}
+<h3>Все сотрудники</h3>
+
+{% if worker_list %}
+
+<ul>
+
+    {% for worker in worker_list %}
+
+    <li>
+        <a href="{{ worker.id }}">{{ worker.name }}</a>
+        <p>{{ worker.job_title }}</p>
+        <p>{{ worker.part }}</p>
+    </li>
+    <hr>
+
+    {% endfor %}
+
+</ul>
+{% else %}
+<p>Пока ничего нет</p>
+{% endif %}
+
+{% endblock %}}
+
+</body>

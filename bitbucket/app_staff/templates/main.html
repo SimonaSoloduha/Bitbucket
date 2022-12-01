@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bitbucket</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+<header>
+    {% block hello %}
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="container">
+                <p class="brand">Test Bitbucket</p>
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="{% url 'parts_and_workers' %}">Древовидня структура отделов со списком сотрудников</a> <span class="divider"></span>
+                    </li>
+                    <li>
+                        <a href="{% url 'worker_list' %}">Все сотрудники</a> <span class="divider"></span>
+                    </li>
+                    <li>
+                        <a href="{% url 'worker_create' %}">Добавить сотрудника</a> <span class="divider"></span>
+                    </li>
+                    <li>
+                        <a href="{% url 'part_list' %}">Все отделы</a> <span class="divider"></span>
+                    </li>
+                    <li>
+                        <a href="{% url 'part_create' %}">Добавить отдел</a> <span class="divider"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</header>
+<div>
+    <div class="container text-xs-center">
+
+    {% block content %}
+    <h1>Главная страница</h1>
+    {% endblock %}
+    </div>
+
+</div>
+</body>
+</html>

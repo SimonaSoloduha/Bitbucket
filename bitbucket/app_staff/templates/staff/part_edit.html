@@ -1,0 +1,18 @@
+{% extends 'main.html'%}
+
+<body>
+
+{% block content %}
+
+<h2>Редактировать данные про отдел:</h2>
+
+<form method="post" action="/part/{{part_id}}/edit/">
+    {% csrf_token %}
+    <p>Название: {{ form.name }}</p>
+    <p>Иерархия: {{ form.parent }}</p>
+    <button type="submit">Сохранить</button>
+</form>
+
+{% endblock %}
+
+</body>
